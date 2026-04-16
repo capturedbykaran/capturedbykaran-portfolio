@@ -1,0 +1,466 @@
+/* ---------------------------
+   Captured By Karan - style.css
+   Responsive + keeps existing animations
+   --------------------------- */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------
+   Header 
+   --------------------------- */
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 15px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* logo */
+.logo h1 {
+  font-size: 1.6rem;
+  color: #00bcd4;
+  line-height: 1;
+}
+
+/* navigation (desktop) */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0; /* we use margin on anchors */
+}
+
+nav a {
+  margin-left: 25px;
+  color: #cad9db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.25s ease, border-bottom 0.25s ease;
+  padding: 6px 2px;
+  white-space: nowrap;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #00bcd4;
+  border-bottom: 2px solid #00bcd4;
+  outline: none;
+}
+
+/* mobile menu toggle (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #cad9db;
+  font-size: 1.9rem;
+  cursor: pointer;
+}
+
+/* ---------------------------
+   Hero Section
+   --------------------------- */
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 40px;
+  flex-wrap: wrap;
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* hero text */
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0px;
+  color: #00bcd4;
+  line-height: 1.05;
+}
+
+.hero-text h1 span {
+  font-size: 3rem;
+  color: #ffffff;
+  display: inline-block;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 12px 0 22px;
+  color: #cfcfcf;
+}
+
+/* CTA buttons */
+.cta-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-right: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.25s, background 0.25s;
+}
+
+.cta-btn {
+  background: #00bcd4;
+  color: #121212;
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  border: 2px solid #00bcd4;
+  color: #00bcd4;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  transform: translateY(-4px);
+  outline: none;
+}
+
+/* hero image (responsive) */
+.hero-image img {
+  width: 100%;
+  max-width: 400px; /* keeps original look on desktop */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.2);
+}
+
+/* ---------------------------
+   About Section
+   --------------------------- */
+.about-me {
+  background-color: #1f1f1f;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 0 12px rgba(0, 188, 212, 0.2);
+  animation: fadeIn 1.5s ease-in;
+}
+
+.about-me h2 {
+  color: #00bcd4;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+.about-me p {
+  color: #d6d6d6;
+  margin-bottom: 10px;
+}
+.about-me a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ---------------------------
+   Services
+   --------------------------- */
+.services {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  color: #00bcd4;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 0 12px rgba(0, 188, 212, 0.2);
+  transition: transform 0.25s;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  color: #cad9db;
+  margin-bottom: 10px;
+}
+
+/* ---------------------------
+   Projects
+   --------------------------- */
+.projects {
+  background-color: #1f1f1f;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 12px;
+  max-width: 900px;
+  text-align: center;
+}
+
+.projects h2 {
+  color: #00bcd4;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.project-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #222;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #00bcd4;
+  color: #121212;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ---------------------------
+   Contact
+   --------------------------- */
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #00bcd4;
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  margin: 10px;
+  color: #cad9db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  color: #00bcd4;
+}
+
+/* ---------------------------
+   Footer
+   --------------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1a1a1a;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  color: #aaa;
+}
+
+/* ---------------------------
+   Animations (kept)
+   --------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* small dropdown animation for mobile nav */
+@keyframes navDrop {
+  from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------------------------
+   Responsive: Tablet & Mobile
+   Breakpoints: 992px (tablet) and 576px (phone)
+   --------------------------- */
+
+/* 992px and below: tablet and smaller */
+@media (max-width: 992px) {
+
+  /* reduce header padding */
+  header {
+    padding: 12px 18px;
+  }
+
+  .logo h1 {
+    font-size: 1.25rem;
+  }
+
+  /* show hamburger, hide desktop nav by default */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* hide nav by default on tablet/mobile - will show when .active is set by JS */
+  nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px); /* places the menu just below header */
+    right: 18px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 180px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    flex-direction: column;
+    z-index: 1100;
+  }
+
+  /* nav when active (JS toggles .active) */
+  nav.active {
+    display: flex;
+    animation: navDrop 160ms ease-out;
+  }
+
+  nav a {
+    margin: 8px 0;
+    padding: 8px 10px;
+    border-bottom: none;
+    display: block;
+  }
+
+  /* stack hero vertically, center content */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 48px 18px;
+  }
+
+  /* make hero image responsive and smaller on tablets */
+  .hero-image {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.85rem;
+  }
+
+  .hero-text h1 span {
+    font-size: 2.6rem;
+  }
+
+  .hero-text p {
+    font-size: 1.05rem;
+  }
+
+  /* Services: stack to a column if needed */
+  .service-cards {
+    gap: 18px;
+  }
+}
+
+/* 576px and below: phones */
+@media (max-width: 576px) {
+
+  header {
+    padding: 10px 14px;
+  }
+
+  .logo h1 {
+    font-size: 1.05rem;
+  }
+
+  /* ensure mobile nav covers narrower width nicely */
+  nav {
+    right: 12px;
+    min-width: 160px;
+  }
+
+  .hero {
+    padding: 36px 14px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text h1 span {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    padding: 10px 16px;
+    margin-bottom: 8px;
+  }
+
+  /* stack service cards vertically and center them */
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .about-me,
+  .projects {
+    padding: 28px 18px;
+    margin: 24px 12px;
+  }
+
+  .contact {
+    padding: 36px 16px;
+  }
+
+  footer {
+    padding: 18px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small accessibility/focus helpers */
+a:focus,
+button:focus {
+  outline: 3px solid rgba(0,188,212,0.15);
+  outline-offset: 3px;
+}

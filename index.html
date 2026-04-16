@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Air Pollution</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">  
+      <h1>❯❯❯ Captured By Karan</h1>
+    </div>
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="PhotoGallery.html">.y</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- <div class="hero-image">
+        <img src="img/mebg.png" alt="Karan's photo"> -->
+      </div>
+      <div class="hero-text">
+        <h1>Hello! <br> I am <span>Karan</span></h1>
+        <p>A B-Tech Undergraduate | Engineer | Photographer</p>
+        <a href="PhotoGallery.html" class="cta-btn">View My Work</a>
+        <a href="#contact" class="cta-btn secondary">Hire Me</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-me">
+      <h2>About Me</h2>
+      <p>
+        I’m <strong>Karan</strong>, an <strong>Engineer, Web Developer,</strong> and <strong>Photographer</strong>
+        passionate about merging creativity with technology.
+        Currently pursuing <strong>B.Tech at NSUT</strong>, I specialize in <strong>C++, Python,</strong> and
+        <strong>full-stack web development</strong>.
+        I create responsive websites and captivating visuals that bring ideas to life.
+        Beyond code, I love storytelling through <strong>photography and videography</strong>, capturing emotions with
+        precision and art.
+      </p>
+
+      <p>
+        Along with my B-Tech studies at <strong>Netaji Subhas University of Technology</strong>, I have
+        been working on personal and freelance projects in photography, videography, and editing.
+      </p>
+      <a href="about.html" class="cta-link">Learn more about me →</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <h2>What I Offer</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Photography</h3>
+          <p>Portraits, weddings, events, landscapes – capturing authentic and timeless shots.</p>
+        </div>
+        <div class="card">
+          <h3>Videography</h3>
+          <p>High-quality cinematic videos, short films, and event coverage.</p>
+        </div>
+        <div class="card">
+          <h3>Editing</h3>
+          <p>Professional photo and video editing to bring out the best in every frame.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <h2>My Projects</h2>
+      <div class="project-card">
+        <h3>Meesho Clone</h3>
+        <p>A responsive front-end design template of Meesho shopping app’s official website.</p>
+        <a href="https://capturedbykaran.github.io/meesho/" target="_blank">View Project</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Connect With Me</h2>
+      <p>Have a project in mind? Let’s collaborate!</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/captured.by.karan/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@CapturedByKaran_5" target="_blank">YouTube</a>
+        <a href="mailto:karan.singh022005@gmail.com">Email Me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Captured By Karan. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>
