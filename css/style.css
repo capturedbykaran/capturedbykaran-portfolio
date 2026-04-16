@@ -22,13 +22,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ---------------------------
-<<<<<<< HEAD
-   Header 
-=======
-   Header
->>>>>>> b772b30e660fb0b033a9240a2475687119e553aa
-   --------------------------- */
 header {
   position: sticky;
   top: 0;
@@ -94,14 +87,13 @@ nav a:focus {
   flex-wrap: wrap;
   animation: fadeIn 1.2s ease-in;
 }
-<<<<<<< HEAD
-=======
+/* 
 .hero-image {
   flex: 1;
   max-width: 350px;
   text-align: center;
 }
->>>>>>> b772b30e660fb0b033a9240a2475687119e553aa
+ */
 
 /* hero text */
 .hero-text {
@@ -194,6 +186,45 @@ nav a:focus {
 }
 
 /* ---------------------------
+   Coding Profile
+   --------------------------- */
+.coding-profile {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 40px;
+}
+
+.coding-profile h2 {
+  color: #00bcd4;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.coding-profile p {
+  margin-bottom: 10px;
+  color: #cfcfcf;
+}
+
+.coding-profile ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.coding-profile li {
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+/* custom bullet */
+.coding-profile li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #00bcd4;
+}
+
+/* ---------------------------
    Services
    --------------------------- */
 .services {
@@ -256,6 +287,14 @@ nav a:focus {
   padding: 20px;
   border-radius: 12px;
   background: #222;
+  box-shadow: 0 0 10px rgba(0,188,212,0.15);
+  transition: all 0.3s ease;
+}
+
+/* hover animation */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,188,212,0.25);
 }
 
 .project-card a {
@@ -475,4 +514,43 @@ a:focus,
 button:focus {
   outline: 3px solid rgba(0,188,212,0.15);
   outline-offset: 3px;
+}
+/* ---------------------------
+   Scroll Animations
+   --------------------------- */
+
+/* initial hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* when visible */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* slight delay variants */
+.reveal.delay-1 { transition-delay: 0.2s; }
+.reveal.delay-2 { transition-delay: 0.4s; }
+.reveal.delay-3 { transition-delay: 0.6s; }
+/* ---------------------------
+   Card Load Animation
+   --------------------------- */
+@keyframes cardPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.card,
+.project-card {
+  animation: cardPop 0.6s ease forwards;
 }

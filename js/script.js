@@ -1,39 +1,75 @@
-// Smooth Scroll for internal links
-document.querySelectorAll('a[href^="/"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const href = this.getAttribute('href');
-    window.location.href = href;
-  });
-});
 
-// Scroll animation trigger (optional if using AOS or GSAP later)
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.bottom-content div').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.style.opacity = 1;
-      el.style.transform = 'translateY(0)';
+// ============================
+// SMOOTH SCROLL (FIXED)
+// ============================
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+
+    if (targetId === "#" || targetId === "") return;
+
+    const target = document.querySelector(targetId);
+
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   });
 });
 
-// Theme switcher logic (optional future feature)
-const toggleTheme = () => {
-  document.body.classList.toggle('light-mode');
-};
-<<<<<<< HEAD
-=======
 
-// Mobile menu toggle
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
+// ============================
+// SCROLL REVEAL ANIMATION (BEST METHOD)
+// ============================
+
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+// Apply observer
+reveals.forEach(el => {
+  observer.observe(el);
+});
+
+
+// ============================
+// MOBILE MENU TOGGLE
+// ============================
+
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
     });
-// On Hire me button click send email
+  });
+}
+
+
+// ============================
+// HIRE ME BUTTON (SAFE VERSION)
+// ============================
+
 const hireMeBtn = document.getElementById("hireMeBtn");
 
+if (hireMeBtn) {
   hireMeBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
@@ -41,7 +77,7 @@ const hireMeBtn = document.getElementById("hireMeBtn");
     const subject = "Hiring Inquiry – Portfolio Website";
     const body =
       "Hi Karan,%0D%0A%0D%0A" +
-      "I visited your portfolio and would like to work with you.%0D%0A%0D%0A" +
+      "I came across your portfolio and would like to discuss an opportunity.%0D%0A%0D%0A" +
       "Project Details:%0D%0A" +
       "- Type:%0D%0A" +
       "- Budget:%0D%0A" +
@@ -51,4 +87,18 @@ const hireMeBtn = document.getElementById("hireMeBtn");
 
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   });
->>>>>>> b772b30e660fb0b033a9240a2475687119e553aa
+}
+
+
+// ============================
+// OPTIONAL: BUTTON CLICK EFFECT
+// ============================
+
+document.querySelectorAll('.cta-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      btn.style.transform = "";
+    }, 150);
+  });
+});

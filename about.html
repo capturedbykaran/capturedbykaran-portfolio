@@ -2,379 +2,150 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me - Captured by Karan</title>
-    <style>
-        /* Reset & Global */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1f1f1f;
-            padding: 20px 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            animation: fadeInTop 1s ease-out;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            color: #cad9db;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            margin-left: 20px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #00bcd4;
-        }
-
-        /* Mobile menu toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #cad9db;
-            font-size: 1.9rem;
-            cursor: pointer;
-        }
-
-        /* Main Content Styling */
-        main {
-            padding: 60px 40px;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        main h3 {
-            font-size: 2rem;
-            color: #00bcd4;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        main h3::after {
-            content: '';
-            position: absolute;
-            width: 60%;
-            height: 3px;
-            background-color: #00bcd4;
-            bottom: -8px;
-            left: 0;
-            border-radius: 4px;
-        }
-
-        main h4 {
-            font-size: 1.4rem;
-            color: #ffffff;
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-
-        .detailed-about {
-            margin-bottom: 50px;
-            background-color: #1e1e1e;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0, 188, 212, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .detailed-about:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.25);
-        }
-
-        .detailed-about p {
-            font-size: 1.05rem;
-            color: #dcdcdc;
-            margin-bottom: 16px;
-            text-align: justify;
-            line-height: 1.7;
-        }
-
-        .detailed-about a {
-            color: #00bcd4;
-            text-decoration: none;
-        }
-
-
-        /* Sections */
-        .education,
-        .skills {
-            margin-bottom: 50px;
-            background-color: #1e1e1e;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0, 188, 212, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .education a {
-            color: #00bcd4;
-            text-decoration: none;
-        }
-
-        .about-me:hover,
-        .education:hover,
-        .skills:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.25);
-        }
-
-        /* Paragraph styling for about summary */
-        .about-summary {
-            font-size: 1.1rem;
-            color: #dcdcdc;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* Learn More button */
-        .learn-more {
-            display: inline-block;
-            margin-top: 10px;
-            color: #00bcd4;
-            border: 1px solid #00bcd4;
-            padding: 8px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .learn-more:hover {
-            background-color: #00bcd4;
-            color: #121212;
-        }
-
-        /* Lists */
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            padding: 10px 0;
-            font-size: 1.05rem;
-            color: #dcdcdc;
-            position: relative;
-            padding-left: 24px;
-        }
-
-        ul li::before {
-            content: "➤";
-            position: absolute;
-            left: 0;
-            color: #00bcd4;
-            font-size: 0.9rem;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInTop {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            nav {
-                display: none;
-                flex-direction: column;
-                background-color: #1f1f1f;
-                position: absolute;
-                top: 70px;
-                right: 20px;
-                width: 200px;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            }
-
-            nav.active {
-                display: flex;
-            }
-
-            nav a {
-                margin: 10px 0;
-                text-align: center;
-            }
-
-            main {
-                padding: 40px 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Karan Singh</title>
+  <link rel="stylesheet" href="css/about_styles.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1>❯❯❯ Captured By Karan Directory</h1>
-        </div>
-        <div>
-            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-            <nav>
-<<<<<<< HEAD
-                <a href="/index.html">Home</a>
-                <a href="/about.html">About Me</a>
-                <a href="/PhotoGallery.html">My Photo Gallery</a>
-=======
-                <a href="index.html">Home</a>
-                <a href="about.html">About Me</a>
-                <a href="PhotoGallery.html">My Photo Gallery</a>
->>>>>>> b772b30e660fb0b033a9240a2475687119e553aa
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <div id="learn-more" class="detailed-about">
-            <h3>More About Me</h3>
-            <p>
-                I’m <strong>Karan</strong>, an enthusiastic <strong>Engineer</strong> and <strong>Photographer</strong>
-                passionate about transforming creativity into meaningful digital experiences.
-                Currently pursuing a <strong>B.Tech in Instrumentation and Control Engineering</strong> at
-                <a href="http://www.nsut.ac.in/en/home" target="_blank">Netaji Subhas University of Technology
-                    (NSUT)</a>,
-                I have built a strong foundation in <strong>C++, Python,</strong> and <strong>full-stack web
-                    development</strong>.
-                My academic focus includes <strong>Data Structures, Algorithms, and Database Systems</strong>, which
-                help me craft scalable, efficient, and reliable solutions.
-            </p>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <h1>❯❯❯ Karan Singh</h1>
+    </div>
 
-            <p>
-                Alongside academics, I actively work on <strong>personal and freelance projects</strong> involving web
-                design, front-end development, and creative media production.
-                I enjoy blending logic and aesthetics — whether it’s developing a responsive web app or composing a
-                perfect shot behind the camera.
-                My portfolio includes a range of projects demonstrating my ability to integrate technical precision with
-                visual storytelling.
-            </p>
+    <button class="menu-toggle">☰</button>
 
-            <p>
-                As a <strong>photographer and videographer</strong>, I find beauty in detail and emotion in motion.
-                My work captures the connection between people, places, and perspectives,
-                using tools like <strong>Adobe Photoshop, Lightroom, and Premiere Pro</strong> to turn raw visuals into
-                compelling stories.
-                This fusion of engineering and artistry defines my identity — a creator who builds as well as captures.
-            </p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
 
-            <p>
-                I’m constantly exploring new technologies, frameworks, and artistic styles to grow both as a developer
-                and as a creative professional.
-                My goal is to collaborate on impactful projects that challenge me to innovate and deliver meaningful
-                results.
-                Whether it’s coding a web solution or curating a photo series, I aim to blend <strong>precision,
-                    creativity, and passion</strong> in everything I do.
-            </p>
-        </div>
+  <main>
 
+    <!-- ABOUT -->
+    <section class="about-me reveal">
+      <h2>About Me</h2>
 
-        <div id="learn-more" class="education">
-            <h3>Education</h3>
-            <ul>
-                <li>Currently pursuing B-Tech at
-                    <a href="http://www.nsut.ac.in/en/home" target="_blank">Netaji Subhas University of Technology,
-                        Delhi</a>
-                </li>
-                <li>Completed my schooling from
-                    <a href="https://www.cbse.gov.in/" target="_blank">RPVV (affiliated to CBSE)</a>, Rohini, Delhi.
-                </li>
-            </ul>
-        </div>
+      <p>
+        I am a <strong>B.Tech student at NSUT</strong> pursuing Instrumentation and Control Engineering
+        and an aspiring <strong>Software Development Engineer (SDE)</strong>.
+      </p>
 
-        <div class="skills">
-            <h3>Skills</h3>
+      <p>
+        I specialize in <strong>full-stack web development</strong> and actively strengthen my problem-solving
+        skills through <strong>Data Structures & Algorithms</strong>.
+      </p>
 
-            <h4>Technical Skills</h4>
-            <ul>
-                <li>Programming: Python, C++</li>
-                <li>Web Development: HTML, CSS, JavaScript</li>
-                <li>Database Management: MySQL, MongoDB</li>
-            </ul>
+      <p>
+        I enjoy building scalable applications and continuously learning new technologies to improve
+        performance, efficiency, and user experience.
+      </p>
+    </section>
 
-            <h4>Photography Skills</h4>
-            <ul>
-                <li>Camera Handling</li>
-                <li>Photo Editing: Adobe Photoshop, Lightroom</li>
-                <li>Videography: Adobe Premiere Pro</li>
-            </ul>
+    <!-- SKILLS -->
+    <section class="skills reveal">
+      <h2>Technical Skills</h2>
 
-            <h4>Soft Skills</h4>
-            <ul>
-                <li>Communication</li>
-                <li>Teamwork</li>
-                <li>Time Management</li>
-            </ul>
-        </div>
-    </main>
+      <ul>
+        <li><strong>Languages:</strong> C, C++, Python</li>
+        <li><strong>Core Concepts:</strong> Data Structures, Algorithms, OOP</li>
+        <li><strong>Databases:</strong> MySQL, PostgreSQL</li>
+        <li><strong>Web:</strong> HTML, CSS, JavaScript, React.js, Node.js, Express.js</li>
+        <li><strong>Tools:</strong> Git, GitHub, Postman, Supabase, Render</li>
+      </ul>
+    </section>
 
-    <!-- Toggle script -->
-    <script>
-        const toggleButton = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        toggleButton.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-    </script>
+    <!-- PROJECTS -->
+    <section class="projects reveal">
+      <h2>Projects</h2>
+
+      <div class="project-card reveal delay-1">
+        <h3>DocEase – Doctor Search Platform</h3>
+        <p><strong>Tech:</strong> MERN, PostgreSQL, JWT</p>
+
+        <ul>
+          <li>Built a full-stack doctor search platform with filtering & availability features</li>
+          <li>Developed REST APIs with pagination, filtering, CRUD operations</li>
+          <li>Implemented JWT authentication & RBAC (Admin & Super Admin)</li>
+          <li>Optimized database queries and API performance</li>
+          <li>Deployed using Supabase & Render</li>
+        </ul>
+
+        <a href="https://docease-frontend-l8ex.onrender.com/" target="_blank">Live Demo</a>
+      </div>
+
+      <div class="project-card reveal delay-2">
+        <h3>Portfolio Website</h3>
+        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+
+        <ul>
+          <li>Designed responsive portfolio showcasing technical projects</li>
+          <li>Optimized UI for performance across devices</li>
+          <li>Structured clean and maintainable frontend code</li>
+        </ul>
+
+        <a href="https://capturedbykaran.github.io" target="_blank">Live Demo</a>
+      </div>
+
+    </section>
+
+    <!-- CODING PROFILE -->
+    <section class="coding-profile reveal">
+      <h2>Coding Profile</h2>
+
+      <ul>
+        <li><strong>LeetCode:</strong> 140+ problems | Rating 1460+</li>
+        <li>Strong in arrays, recursion, trees & dynamic programming</li>
+        <li><strong>GeeksforGeeks & HackerRank:</strong> 60+ problems</li>
+      </ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience reveal">
+      <h2>Experience</h2>
+
+      <h3>Volunteer Intern</h3>
+      <p><strong>India Human Rights Association (NGO)</strong></p>
+      <p><em>May 2024 – June 2024</em></p>
+
+      <ul>
+        <li>Led and coordinated a team of 8–10 volunteers</li>
+        <li>Engaged with 100+ individuals during awareness campaigns</li>
+        <li>Managed on-ground operations and problem-solving</li>
+      </ul>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education reveal">
+      <h2>Education</h2>
+
+      <p><strong>B.Tech – Instrumentation & Control Engineering</strong></p>
+      <p>Netaji Subhas University of Technology (NSUT), Delhi</p>
+      <p>2023 – 2027 | CGPA: 7.02 / 10</p>
+
+      <p><strong>Relevant Coursework:</strong></p>
+      <ul>
+        <li>Data Structures</li>
+        <li>Microprocessors</li>
+        <li>Digital Electronics</li>
+        <li>Machine Learning</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Karan Singh</p>
+  </footer>
+
+  <script src="js/script.js"></script>
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> b772b30e660fb0b033a9240a2475687119e553aa
