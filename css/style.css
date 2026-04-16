@@ -23,7 +23,11 @@ body {
 }
 
 /* ---------------------------
+<<<<<<< HEAD
    Header 
+=======
+   Header
+>>>>>>> b772b30e660fb0b033a9240a2475687119e553aa
    --------------------------- */
 header {
   position: sticky;
@@ -90,6 +94,14 @@ nav a:focus {
   flex-wrap: wrap;
   animation: fadeIn 1.2s ease-in;
 }
+<<<<<<< HEAD
+=======
+.hero-image {
+  flex: 1;
+  max-width: 350px;
+  text-align: center;
+}
+>>>>>>> b772b30e660fb0b033a9240a2475687119e553aa
 
 /* hero text */
 .hero-text {
